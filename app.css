@@ -1,0 +1,164 @@
+/*
+### Primary
+
+Moderate violet: hsl(263, 55%, 52%)
+Very dark grayish blue: hsl(217, 19%, 35%)
+Very dark blackish blue: hsl(219, 29%, 14%)
+White: hsl(0, 0%, 100%)
+
+### Neutral
+
+Light gray: hsl(0, 0%, 81%)
+Light grayish blue: hsl(210, 46%, 95%)
+
+Note for text colors:
+
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity
+font-family: 'Barlow Semi Condensed', sans-serif;
+*/
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 13px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+  height: 100vh;
+  background-color: hsl(210, 46%, 95%);
+  display: grid;
+  position: relative;
+}
+
+main {
+  width: 90%;
+  height: 90%;
+  margin: 5% auto 0% auto;
+  background-color: hsl(210, 46%, 95%);
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "Pur Pur Gre whL"
+    "whS Bla Bla whL";
+  position: relative;
+}
+.card {
+  border-radius: 10px;
+  padding: 1rem 3rem 2rem 2rem;
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  grid-template-rows: 100px auto 1fr;
+  grid-template-areas:
+    "image Name"
+    "r1 r1"
+    "r2 r2";
+  box-shadow: 0 1px 1px rgba(17, 4, 4, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+    0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+    0 16px 16px rgba(0, 0, 0, 0.12);
+}
+.Pur {
+  grid-area: Pur;
+  background: url(./images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-size: 140px;
+  background-position-x: 85%;
+  background-position-y: 5%;
+  background-color: hsl(263, 55%, 52%);
+}
+.Gre {
+  grid-area: Gre;
+  background-color: hsl(217, 19%, 35%);
+}
+.whL {
+  grid-area: whL;
+  background-color: hsl(0, 0%, 100%);
+}
+.whS {
+  grid-area: whS;
+  background-color: hsl(0, 0%, 100%);
+}
+.Bla {
+  grid-area: Bla;
+  background-color: hsl(219, 29%, 14%);
+}
+.r1 {
+  grid-area: r1;
+}
+.r2 {
+  margin-top: 1rem;
+  grid-area: r2;
+}
+.image {
+  grid-area: image;
+  margin: auto 0;
+}
+.Name {
+  grid-area: Name;
+  margin: auto 0;
+  color: white;
+}
+.name {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.status {
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 50%;
+}
+.wname {
+  font-weight: 600;
+  color: hsl(217, 19%, 35%);
+}
+.wstatus {
+  font-weight: 600;
+  color: hsl(217, 19%, 35%);
+  opacity: 50%;
+}
+.r1 {
+  font-size: 2rem;
+  color: white;
+  font-weight: 600;
+}
+.r2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+  opacity: 70%;
+}
+.var1 {
+  color: hsl(217, 19%, 35%);
+  font-weight: 600;
+}
+.var2 {
+  color: hsl(217, 19%, 35%);
+  font-weight: 500;
+  opacity: 70%;
+}
+img {
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+}
+@media screen and (max-width: 768px) {
+  main {
+    grid-gap: 40px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+      "Pur"
+      "Gre"
+      "whS"
+      "Bla"
+      "whL";
+  }
+}
